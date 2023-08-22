@@ -124,7 +124,7 @@ obj.message = text
 obj.save()
 ```
 
-使用 filter 的 update，因為直接調用 sql 語法，不通過 model 層，需手動更新
+使用 filter 的 update，因為直接調用 sql 語法，不通過 model 層，需呼叫 `datetime.datetime.now()` 函式更新
 
 ```python3=
 user_message.objects.filter(uid=uid, name=name).update(message=text, time=datetime.datetime.now())
