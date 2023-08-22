@@ -83,13 +83,13 @@ python manage.py migrate
 
 將 models.py 資料表匯入 views.py
 
-```python3=
+```python3
 from example.models import *
 ```
 
 修改 views.py 主要 codespace
 
-```python3=
+```python3
 if isinstance(event, MessageEvent):
     uid = event.source.user_id
     profile = line_bot_api.get_profile(uid)
@@ -118,7 +118,7 @@ if isinstance(event, MessageEvent):
 
 操作經過 model 層，會自動更新 current time
 
-```python3=
+```python3
 obj = user_message.objects.get(uid=uid)
 obj.message = text
 obj.save()
@@ -126,7 +126,7 @@ obj.save()
 
 使用 filter 的 update，因為直接調用 sql 語法，不通過 model 層，需呼叫 `datetime.datetime.now()` 函式更新
 
-```python3=
+```python3
 user_message.objects.filter(uid=uid, name=name).update(message=text, time=datetime.datetime.now())
 ```
 
@@ -137,13 +137,13 @@ Database CRUD (create, read, update, delete)
 
 ### Create data:
 
-```python3=
+```python3
 Table_name.objects.create(data=data)
 ```
 
 ### Read data:
 
-```python3=
+```python3
 # return list
 Table_name.objects.filter(data=data)
 
@@ -153,13 +153,13 @@ Table_name.objects.get(data=data)
 
 ### Update data:
 
-```python3=
+```python3
 Table_name.objects.filter(data=data, name=name).update(text=new_text)
 ```
 
 ### Delete data:
 
-```python3=
+```python3
 Table_name.objects.filter(data=data).delete()
 Table_name.objects.all().delete()
 ```
