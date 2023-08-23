@@ -5,6 +5,8 @@ Linebot + Django Database 實作
 - previous post: https://github.com/ycpranchu/linebot_django
 - [Django official document](https://docs.djangoproject.com/en/4.2/topics/db/models/)
 
+Django 包含一個簡單而強大的 ORM（物件關聯對映），ORM 為生成和管理資料庫遷移提供支援。Django 支援許多現成的關聯式資料庫，例如 SQLite、PostgreSQL、MySQL 和 Oracle。換句話說，若使用的是關聯式資料庫，則由於 Django 具備內建的 ORM 和遷移管理工具，入門將更加容易。
+
 Overview
 ---
 
