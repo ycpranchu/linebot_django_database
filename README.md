@@ -54,7 +54,8 @@ class user_message(models.Model):
 ```
 
 
-- `time = models.DateTimeField(auto_now=True)`，當 `auto_now` 為 `true` 時，不僅意味著該欄位的預設值為當前時間，而是表示該欄位將被「強制」更新為當前時間，無法在程式中手動為該欄位賦值，且該欄位在管理員界面中是唯讀的。
+- `time = models.DateTimeField(auto_now=True)`，當 `auto_now` 為 `True` 時，不僅意味著該欄位的預設值為當前時間，而是表示該欄位將被「強制」更新為當前時間，無法在程式中手動為該欄位賦值，且該欄位在管理員界面中是唯讀的。
+- `time = models.DateTimeField(auto_now_add=True)`，當 `auto_now_add` 為 `True` 时，會在 model 對象第一次被 create 时，將該欄位的值「強制」設定為 create 當下的時間，為 Read-Only。
 - `__str__()`: A Python “magic method” that returns a string representation of any object. This is what Python and Django will use whenever a model instance needs to be coerced and displayed as a plain string. Most notably, this happens when you display an object in an interactive console or in the admin.
 
 後台資料：admin.py
